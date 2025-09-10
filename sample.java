@@ -1,3 +1,4 @@
 // sample changes, to test the auto build, test, deploy jenkins job.
 
-// Edited x2
+// Edited x2 (test manual pipeline)
+
