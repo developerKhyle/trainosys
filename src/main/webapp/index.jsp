@@ -27,7 +27,7 @@
 	<div class="container">
 
 		<header>
-			<h1>Trainosys technologies DevOps & Cloud Learning Platform</h1> 
+			<h1>Trainosys technologies DevOps & Cloud Learning Platform(KHYLE)</h1> 
 			<h4>Contact: +91-9108458890 Email: info@trainosys.com</h4> 
 		</header>
 
@@ -106,3 +106,4 @@
 
 </body>
 </html>
+
