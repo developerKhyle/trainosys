@@ -7,33 +7,30 @@ pipeline {
 	        	checkout scm
 	    	}
         }
-	stage('Build') {
-		steps {
-			sh 'mvn install'
+		stage('Build') {
+			steps {
+				sh 'mvn install'
+			}
 		}
-	}	
- 
-	stage ('Compile'){
-	        steps {
-			sh 'mvn clean compile'
-                }
-	}
-
-	stage('Run Tests') {
-	    steps {
-	       sh 'mvn test'
+		stage ('Compile'){
+		        steps {
+					sh 'mvn clean compile'
+	            }
+		}
+		stage('Run Tests') {
+		    steps {
+		       sh 'mvn test'
+		    }
+		}
+		stage('Package as WAR') {
+			steps {
+				sh 'mvn package'
+			}
+		}
+		stage('Deployment') {
+			steps {
+				sh 'scp target/srtech.war root@172.31.23.129:/root/tomcat/apache-tomcat-10.1.45/webapps'
+			}
 	    }
 	}
-
-        stage('Package as WAR') {
-            steps {
-                sh 'mvn package'
-            }
-        }
-	stage('Deployment') {
-	   steps {
-		sh 'scp target/srtech.war root@172.31.23.129:/root/tomcat/apache-tomcat-10.1.45/webapps'
-	}
-    }
-}
 }
